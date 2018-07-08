@@ -1,0 +1,20 @@
+.dropdown-toggle,
+.dropdown-toggle:hover,
+.btn-secondary:not(:disabled):not(.disabled).active,
+.btn-secondary:not(:disabled):not(.disabled):active,
+.show>.btn-secondary.dropdown-toggle {
+  background-color: transparent;
+  border: none;
+}
+
+.btn-secondary.focus,
+.btn-secondary:focus,
+.btn-secondary:not(:disabled):not(.disabled).active:focus,
+.btn-secondary:not(:disabled):not(.disabled):active:focus,
+.show>.btn-secondary.dropdown-toggle:focus {
+  box-shadow: none;
+}
+
+.dropdown-menu {
+  top: 40px;
+}

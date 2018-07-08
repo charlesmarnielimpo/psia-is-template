@@ -1,0 +1,21 @@
+.e-or {
+  position: relative;
+  &::before,
+  &::after {
+    content: " ";
+    display: block;
+    width: 25px;
+    height: 2px;
+    border: 2px solid var(--primary);
+  }
+  &::before {
+    position: absolute;
+    top: 12px;
+    left: calc(50% - 40px);
+  }
+  &::after {
+    position: absolute;
+    top: 12px;
+    right: calc(50% - 40px);
+  }
+}

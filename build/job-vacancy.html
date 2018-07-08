@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+
+  <title>Patton Security & Investigation Agency | Job Vacancy</title>
+
+  <link rel="stylesheet" href="assets/vendors/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendors/fontawesome/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="assets/vendors/datatable/dataTables.min.css">
+  <link rel="stylesheet" href="assets/vendors/datatable/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="assets/css/main.min.css">
+
+  <style>
+    .c-breadcrumbs__wrapper {
+      background-color: #e9ecef;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="p-header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/img/patton-logo.png" alt="Patton Security Investigation and Agency" width="100%">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="job-vacancy.html">Job Vacancy
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Applicants
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="applicants.html">Applicant Lists</a>
+                <a class="dropdown-item" href="hired-applicants.html">Hired</a>
+                <a class="dropdown-item" href="approved-applicants.html">Approved</a>
+              </div>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item d-flex align-items-center">
+              <img src="http://via.placeholder.com/50x50" alt="" class="rounded-circle">
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  John D.
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="profile.html">
+                    <i class="fas fa-user-circle"></i>&nbsp; Profile</a>
+                  <a class="dropdown-item" href="index.html">
+                    <i class="fas fa-sign-out-alt"></i>&nbsp; Logout</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="c-breadcrumbs__wrapper">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="d-flex align-items-center">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item ">
+            <a href="# ">Job Vacancy</a>
+          </li>
+          <li class="breadcrumb-item active " aria-current="page ">Job Vacancy Lists</li>
+        </ol>
+        <div class="action ml-auto p-2">
+          <a class="btn btn-warning" type="button" data-toggle="modal" data-target="#add-job-vacancy" data-backdrop="static">
+            <i class="fas fa-plus"></i>&nbsp; Add Job Vacancy</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <main class="container py-5 ">
+    <h2 class="text-center ">Job Vacancy Lists</h2>
+    <hr class="line ">
+    <table id="tbl-job-vacancy" class="table table-hover ">
+      <thead>
+        <th>#</th>
+        <th>Name</th>
+        <th>Vacancy</th>
+        <th>Description</th>
+        <th>Action</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Security Guard</td>
+          <td>10</td>
+          <td>Lorem ipsum asdasdasasas...</td>
+          <td>
+            <button class="btn btn-info" title="Edit Job Vacancy" data-toggle="modal" data-target="#edit-job-vacancy" data-backdrop="static">
+              <i class="fas fa-edit "></i>
+            </button>
+            <button class="btn btn-info" title="Delete Job Vacancy" data-toggle="modal" data-target="#delete-job-vacancy">
+              <i class="fas fa-trash "></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Add Job Vacancy Modal -->
+    <div class="modal fade" id="add-job-vacancy" tabindex="-1" role="dialog" aria-labelledby="addJobVacancyLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addJobVacancyLabel">Add Job Vacancy</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="">Job Name:</label>
+              <input type="text" name="" id="" class="form-control" placeholder="Security Guard">
+              <div class="valid-feedback">Help text</div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="">Number of Vacancy:</label>
+                  <input type="number" name="" id="" class="form-control" placeholder="0">
+                  <div class="valid-feedback">Help text</div>
+                </div>
+              </div>
+              <div class="col-8">
+                <div class="form-group">
+                  <label for="">Image:</label>
+                  <input type="file" name="" id="" class="form-control" placeholder="0">
+                  <div class="valid-feedback">Help text</div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="">Description:</label>
+              <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Description"></textarea>
+              <div class="valid-feedback">Help text</div>
+            </div>
+            <div class="form-group">
+              <label for="">Immediate Hiring?&nbsp; </label>
+              <div class="form-check form-check-inline ml-3">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Yes" checked>
+                <label class="form-check-label" for="inlineRadio1">Yes</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="No">
+                <label class="form-check-label" for="inlineRadio2">No</label>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-warning">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Job Vacancy Modal -->
+    <div class="modal fade" id="edit-job-vacancy" tabindex="-1" role="dialog" aria-labelledby="editJobVacancyLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editJobVacancyLabel">Edit Job Vacancy</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="">Job Name:</label>
+              <input type="text" name="" id="" class="form-control" placeholder="Security Guard">
+              <div class="valid-feedback">Help text</div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="">Number of Vacancy:</label>
+                  <input type="number" name="" id="" class="form-control" placeholder="0">
+                  <div class="valid-feedback">Help text</div>
+                </div>
+              </div>
+              <div class="col-8">
+                <div class="form-group">
+                  <label for="">Image:</label>
+                  <input type="file" name="" id="" class="form-control" placeholder="0">
+                  <div class="valid-feedback">Help text</div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="">Description:</label>
+              <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Description"></textarea>
+              <div class="valid-feedback">Help text</div>
+            </div>
+            <div class="form-group">
+              <label for="">Immediate Hiring?&nbsp; </label>
+              <div class="form-check form-check-inline ml-3">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Yes" checked>
+                <label class="form-check-label" for="inlineRadio1">Yes</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="No">
+                <label class="form-check-label" for="inlineRadio2">No</label>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-warning">Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Delete Job Vacancy Modal -->
+    <div class="modal fade" id="delete-job-vacancy" tabindex="-1" role="dialog" aria-labelledby="deleteJobVacancyLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="deleteJobVacancyLabel">Delete Job Vacancy</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="d-flex align-items-center">
+              <i class="fas fa-question-circle" style="font-size: 32px;"></i>
+              <p class="mb-0 ml-2">Are you sure you want to delete this?</p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+            <button type="button" class="btn btn-warning">Yes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="py-4 text-center border-top d-flex">
+    <div class="container ">
+      <span class="text-muted ">Copyright 2014. All rights reserved.</span>
+    </div>
+  </footer>
+  <script src="assets/vendors/jquery/jquery.min.js "></script>
+  <script src="assets/vendors/popper/popper.min.js "></script>
+  <script src="assets/vendors/bootstrap/bootstrap.min.js "></script>
+  <script src="assets/vendors/datatable/dataTables.min.js "></script>
+  <script src="assets/vendors/datatable/dataTables.bootstrap4.min.js "></script>
+  <script>
+    $(document).ready(function () {
+      $('#tbl-job-vacancy').dataTable();
+    });
+  </script>
+</body>
+
+</html>

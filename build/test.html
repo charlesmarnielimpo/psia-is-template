@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <link rel="stylesheet" href="../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../css/ui-lightness/jquery-ui-1.9.2.custom.css" />
+  <script type="text/javascript" src="../js/jquery.js"></script>
+  <script type="text/javascript" src="../js/patton.js"></script>
+  <script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+  <script type="text/javascript" src="../js/jquery-ui-1.9.2.custom.js"></script>
+</head>
+
+<body style="background:none;font:75%" Trebuchet MS ", sans-serif;">
+
+
+  <div id="content-container">
+
+    <div style="width:700px;min-height:100px;margin:50px auto;">
+      <div style="background-image:url(../images/sub2.png);background-size:100% 100%;background-repeat:repeat-x;border-radius:10px;width:100px;min-height:100px;margin:10px;padding:10px;float:left;">
+
+        <a href="applicant.php?action=Approved">
+          <div style="border:1px solid;border-radius:5px;height:auto;width:auto;cursor:pointer;text-align:center;padding:9px;margin-top:10px;"
+            class="btn">
+            Approved
+            <?php if($countnew>0){echo "(".$countnew.")";}?>
+          </div>
+        </a>
+
+        <a href="applicant.php?set=scheduled">
+          <div style="border:1px solid;border-radius:5px;height:auto;width:auto;cursor:pointer;text-align:center;padding:9px;margin-top:10px;"
+            class="btn">
+            Interview
+          </div>
+        </a>
+
+        <a href="applicant.php?action=Trainee">
+          <div style="border:1px solid;border-radius:5px;height:auto;width:auto;cursor:pointer;text-align:center;padding:9px;margin-top:10px;"
+            class="btn">
+            Trainee
+          </div>
+        </a>
+
+        <a href="applicant.php?action=Hired">
+          <div style="border:1px solid;border-radius:5px;height:auto;width:auto;cursor:pointer;text-align:center;padding:9px;margin-top:10px;"
+            class="btn">
+            Hired
+          </div>
+        </a>
+
+      </div>
+      <div style="border:1px solid #FF9900;border-radius:10px;width:515px;min-height:100px;float:left;margin:10px;">
+        <div class="subhead">
+          <?php 
+							if($action=="Approved" || $action=="" && $set==""){
+								echo "Approved Applicants";
+							}else if($action=="Hired"){
+								echo "Hired Applicants".$job;
+							}else if($set=="interview"){
+								echo "Set for an interview";
+							}else if($set=="scheduled"){
+								echo "Scheduled Interview";
+							}else if($set=="profile"){
+								echo "Applicants Profile";
+							}else if($set=="contact"){
+								echo "Contact";
+							}else if($action=="Trainee"){
+								echo "Trainees";
+							}
+					?>
+        </div>
+        <?php 
+				if($action=="Approved" && $page=="1" || $action=="Hired" && $page=="1" || $action=="scheduled" && $page=="1" || $action=="Trainee" && $page=="1"){
+			
+			?>
+        <table style="width:515px;border-collapse:collapse;" bgcolor="white" border="1">
+          <tr>
+            <td colspan="6" style="padding-bottom:10px;">
+
+
+
+              <div style="border:1px solid;height:100px;width:100px;float:right;margin:10px;">
+                <img src="<?php echo $row2['picAdminLoc'];?>" height="100%" width="100%" />
+              </div>
+              <div style="clear:both"></div>
+
+              Date Hired:
+              <?php echo $row2['datehired'];?>
+            </td>
+            <tr>
+              <td>Surname
+                <br/>
+                <?php echo $row2['lname'];?>
+              </td>
+              <td>Given Name
+                <br/>
+                <?php echo $row2['fname'];?>
+              </td>
+              <td>Middle Name
+                <br/>
+                <?php echo $row2['mname'];?>
+              </td>
+            </tr>
+
+            <tr>
+              <td colspan="2">Present Address
+                <br/>
+                <?php echo $row2['presentAdd'];?>
+              </td>
+              <td>Contact Number
+                <br/>
+                <?php echo $row2['presContact'];?>
+              </td>
+            </tr>
+
+            <tr>
+              <td colspan="2">Provincial Address
+                <br/>
+                <?php echo $row2['provAdd'];?>
+              </td>
+              <td>Contact Number
+                <br/>
+                <?php echo $row2['provContact'];?>
+              </td>
+            </tr>
+
+
+
+        </table>
+        <!------------------------------------------------------------------------------------------------------->
+
+
+
+
+
+
+
+
+        <!------------------------------------------------Date of birth to religion---------------------------------------------->
+
+
+        <table style="width:515px;border-collapse:collapse;" bgcolor="white" border="1">
+
+          <tr>
+            <td>Date of Birth
+              <br/>
+              <?php echo $row2['appDOB'];?>
+            </td>
+            <td>Place of Birth
+              <br/>
+              <?php echo $row2['appDOP'];?>
+            </td>
+            <td>Age
+              <br/>
+              <?php echo $row2['age'];?>
+            </td>
+            <td>Gender
+              <br/>
+              <?php echo $row2['gender'];?>
+            </td>
+            <td>Religion
+              <br/>
+              <?php echo $row2['religion'];?>
+            </td>
+          </tr>
+
+        </table>
+
+
+        <!------------------------------------------------------------------------------------------------------->
+
+
+
+
+        <!-------------------------------------------Height to  civil status------------------------------------------------------------>
+        <table style="width:515px;border-collapse:collapse;" bgcolor="white" border="1">
+          <tr>
+            <td>Height
+              <br/>
+              <?php echo $row2['height'];?>
+            </td>
+            <td>Weight
+              <br/>
+              <?php echo $row2['weight'];?>
+            </td>
+            <td>Civil Status
+              <br/>
+              <?php echo $row2['cstatus'];?>
+            </td>
+          </tr>
+        </table>
+
+        <!------------------------------------------------------------------------------------------------------->
+
+
+
+
+        <!----------------------------------------------SSS no to date expiration--------------------------------------------------------->
+
+        <table style="width:515px;border-collapse:collapse;" bgcolor="white" border="1">
+          <tr>
+            <td>SSS Number
+              <br/>
+              <?php echo $row2['sss'];?>
+            </td>
+            <td>TIN Number
+              <br/>
+              <?php echo $row2['tin'];?>
+            </td>
+            <td>PhilHealth
+              <br/>
+              <?php echo $row2['ph'];?>
+            </td>
+          </tr>
+
+
+          <tr>
+            <td>License No./ SBR No.
+              <br/>
+              <?php echo $row2['sbr'];?>
+            </td>
+            <td>Date Issued
+              <br/>
+              <?php echo $row2['dissue'];?>
+            </td>
+            <td>Date of Expiration
+              <br/>
+              <?php echo $row2['dexp'];?>
+            </td>
+          </tr>
+
+        </table>
+
+
+        <!------------------------------------------------------------------------------------------------------->
+
+
+
+        <!-------------------------------------------father to mother's occupation------------------------------------------------------------>
+
+        <table style="width:515px;border-collapse:collapse;" bgcolor="white" border="1">
+
+          <tr>
+            <td>Name of Father
+              <br/>
+              <?php echo $row2['father'];?>
+            </td>
+            <td>Date of Birth
+              <br/>
+              <?php echo $row2['fDOB'];?>
+            </td>
+            <td>Occupation
+              <br/>
+              <?php echo $row2['dOcc'];?>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Name of Mother
+              <br/>
+              <?php echo $row2['mother'];?>
+            </td>
+            <td>Date of Birth
+              <br/>
+              <?php echo $row2['mDOB'];?>
+            </td>
+            <td>Occupation
+              <br/>
+              <?php echo $row2['mOcc'];?>
+            </td>
+          </tr>
+
+
+        </table>
+
+
+        <!------------------------------------------------------------------------------------------------------->
+
+
+
+
+        <!--------------------------------------------brothers----------------------------------------------------------->
+
+        <table style="width:515px;border-collapse:collapse;text-align:center;" bgcolor="white" border="1">
+          <?php echo $row2['siblings'];?>
+        </table>
+
+
+        <!------------------------------------------------------------------------------------------------------->
+
+
+
+
+
+        <!--------------------------------------------Spouse----------------------------------------------------------->
+
+        <table style="width:515px;border-collapse:collapse;" bgcolor="white" border="1">
+
+          <tr>
+            <td style="border-right:1px solid;border-top:1px solid;padding-top:10px;">Married Name of Spouse
+              <br />
+              <?php echo $row2['spouse'];?>
+            </td>
+            <td style="border-right:1px solid;border-top:1px solid;padding-top:10px;">Date of Birth
+              <br />
+              <?php echo $row2['sDOB'];?>
+            </td>
+            <td style="border-top:1px solid;border-right:1px solid;padding-top:10px;">Occupation
+              <br />
+              <?php echo $row2['sOcc'];?>
+            </td>
+            <td style="border-top:1px solid;padding-top:10px;">Dependents
+              <br />
+              <?php echo $row2['sDep'];?>
+            </td>
+          </tr>
+
+
+        </table>
+
+
+        <!------------------------------------------------------------------------------------------------------->
+
+
+
+
+
+        <!--------------------------------------------Children----------------------------------------------------------->
+
+        <table style="width:515px;border-top:1px solid;text-align:center;border-collapse:collapse;" bgcolor="white" border="1">
+          <?php echo $row2['children'];?>
+
+        </table>
+
+
+        <!------------------------------------------------------------------------------------------------------->
+
+
+        <!--------------------------------------------Contact person----------------------------------------------------------->
+
+        <table style="width:515px;border-top:1px solid;border-collapse:collapse;" bgcolor="white" border="1">
+
+          <tr>
+
+            <td colspan="2">Contact Person in Case of Emergency</td>
+
+          </tr>
+
+
+          <tr>
+            <td>Name
+              <br />
+              <?php echo $row2['eName'];?>
+            </td>
+            <td>Relation
+              <br />
+              <?php echo $row2['eRel'];?>
+            </td>
+
+          </tr>
+          <tr>
+            <td>Address
+              <br />
+              <?php echo $row2['eAddress'];?>
+            </td>
+            <td>Contact Number
+              <br />
+              <?php echo $row2['eContact'];?>
+            </td>
+
+          </tr>
+          <tr>
+            <td colspan="2">&nbsp;</td>
+          </tr>
+
+          <tr>
+            <td colspan="2" style="text-align:center;">
+              <a href="printfirstform.php?id=<?php echo $row2['id'];?>&datehired=<?php echo $row2['datehired'];?>">
+                <button>Print</button>
+              </a>&nbsp;
+              <a href="applicant.php?id=<?php echo $row2['id'];?>&action=<?php echo $action;?>&job=<?php echo $job;?>&page=2">
+                <button>Next</button>
+              </a>
+            </td>
+          </tr>
+
+        </table>
+
+        <?php 
+				}else if($action=="Approved" && $page=="2" || $action=="Hired" && $page=="2" || $action=="scheduled" && $page=="2" || $action=="Trainee" && $page=="2"){
+			?>
+        <!------------------------------------next form---------------------------------->
+
+
+        <span style="font-weight:bold;font-size:14px;display:block;margin:10px;">EDUCATIONAL BACKGROUND</span>
+        <table style="width:515px;text-align:center;border-collapse:collapse;" bgcolor="white" border="1">
+          <?php echo $row2['school'];?>
+        </table>
+
+
+
+        <!--------------------------------------------------------------------------->
+
+        <span style="font-weight:bold;font-size:14px;display:block;margin:10px;">GOVERNMENT EXAMS TAKEN</span>
+
+        <!--------------------------------------Government exam table-------------------------------->
+
+        <table style="width:515px;border-collapse:collapse;text-align:center;" bgcolor="white" border="1">
+          <?php echo $row2['exam'];?>
+        </table>
+
+
+        <!------------------------------------------------------------------------------------------->
+
+        <span style="font-weight:bold;font-size:14px;display:block;margin:10px;">SCHOOL / CIVIC / BUSINESS / SOCIAL ORGANIZATIONS</span>
+
+
+        <!------------------------------------SCHOOL / CIVIC / BUSINESS / SOCIAL ORGANIZATIONS TABLE----------->
+
+        <table style="width:515px;border-collapse:collapse;text-align:center;" bgcolor="white" border="1">
+          <?php echo $row2['org'];?>
+        </table>
+
+
+        <!----------------------------------------------------------------------------------------------------->
+
+
+        <span style="font-weight:bold;font-size:14px;display:block;margin:10px;">EMPLOYMENT RECORD (Previous Employers)</span>
+
+        <!-----------------------employment record1--------------------------------------->
+
+        <table style="width:515px;border-collapse:collapse;text-align:center;" bgcolor="white" border="1">
+          <?php echo $row2['empRecord'];?>
+          <tr>
+            <td colspan="10" style="text-align:center">&nbsp;</td>
+          </tr>
+          <tr>
+            <td colspan="10" style="text-align:center">
+              <a href="printsecondform.php?id=<?php echo $row2['id'];?>">
+                <button>Print</button>
+              </a>&nbsp;
+              <a href="applicant.php?id=<?php echo $row2['id'];?>&action=<?php echo $action;?>&job=<?php echo $job;?>&page=3">
+                <button>Next</button>
+              </a>
+            </td>
+          </tr>
+        </table>
+
+
+
+
+
+        <!------------------------------------------------------------------------------->
+        <?php
+				}else if($action=="Approved" && $page=="3" || $action=="Hired" && $page=="3" || $action=="scheduled" && $page=="3" || $action=="Trainee" && $page=="3"){
+			?>
+          <!-----------------------------------------last form------------------------------>
+
+
+          <span style="font-weight:bold;font-size:14px;display:block;margin:10px;">PERSONAL INFORMATION</span>
+          <table style="width:515px;border-collapse:collapse" bgcolor="white" border="1">
+            <tr>
+              <td colspan="8">What dialects or language do you speak or write?
+                <?php echo $row2['dialects'];?>
+              </td>
+
+
+            </tr>
+
+            <tr>
+              <td colspan="8">Have you ever convicted/ charge in any court law? </td>
+
+            </tr>
+
+
+            <tr>
+              <td colspan="8">
+                <?php echo $row2['convict'];?>
+              </td>
+
+
+            </tr>
+
+
+            <tr>
+              <td colspan="8">Do you have any health problems?</td>
+
+            </tr>
+
+
+            <tr>
+              <td colspan="8">
+                <?php echo $row2['health'];?>
+              </td>
+
+
+            </tr>
+
+            <tr>
+              <td colspan="8">Have you ever had a accident or operation?</td>
+
+
+            </tr>
+
+            <tr>
+              <td colspan="8">
+                <?php echo $row2['accident'];?>
+              </td>
+
+
+            </tr>
+
+            <tr>
+              <td colspan="8">Who recommended you to this company?
+                <?php echo $row2['recommend'];?>
+              </td>
+
+
+            </tr>
+
+            <tr>
+              <td colspan="8">Do you have friend/s or relative/s working in the Company?</td>
+            </tr>
+
+            <tr>
+              <td colspan="8">
+                <?php echo $row2['compFriends'];?>
+              </td>
+
+
+            </tr>
+
+
+            <tr>
+              <td colspan="8">Are you willing to be assigned to any subsidiary office of the Corporation?</td>
+            </tr>
+
+            <tr>
+              <td colspan="8">
+                <?php echo $row2['assignedOff'];?>
+              </td>
+            </tr>
+
+
+            <tr>
+              <td colspan="8">Are you willing to accept provincial assignments?</td>
+            </tr>
+
+            <tr>
+              <td colspan="8">
+                <?php echo $row2['provincialass'];?>
+              </td>
+            </tr>
+
+
+            <tr>
+              <td colspan="8" style="border-bottom:1px solid;">SKILLS:
+                <?php echo $row2['skills'];?>
+              </td>
+            </tr>
+
+
+
+            <tr>
+              <td colspan="8" style="padding-top:20px;">EXPERIENCE/TRAINING</td>
+            </tr>
+            <tr>
+              <td>
+                <?php echo $row2['training'];?>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="8" style="padding-top:20px;">In fifty words or less, please describe yourself. Indicate your likes and dislikes, strengths and areas of
+                improvements, hobbies and interest among others
+                <br />
+
+                <span style="text-indent:40px;text-align:justify;word-wrap:break-word;display:block;">
+                  <?php echo $row2['selfdesc'];?>
+                </span>
+              </td>
+            </tr>
+
+            <tr>
+              <td colspan="8" style="padding-top:20px;">Explain why you joined Patton Security & Investigation Agency Inc,.?
+                <br />
+
+                <span style="text-indent:40px;text-align:justify;word-wrap:break-word;display:block;">
+                  <?php echo $row2['whyjoin'];?>
+                </span>
+              </td>
+            </tr>
+
+
+            <tr>
+              <td colspan="8" style="padding-top:20px;">Briefly state our personal and career goals. How do you see yourself in five years from today?
+                <br />
+
+                <span style="text-indent:40px;text-align:justify;word-wrap:break-word;display:block;">
+                  <?php echo $row2['goals'];?>
+                </span>
+              </td>
+            </tr>
+
+            <tr>
+              <td colspan="8" style="padding-top:20px;">State your three (3) most important accomplishment in life:
+                <br />
+
+                <span style="text-indent:40px;text-align:justify;word-wrap:break-word;display:block;">
+                  <?php echo $row2['accomp'];?>
+                </span>
+              </td>
+            </tr>
+
+
+            <tr>
+              <td colspan="8" style="padding-top:20px;">PERSONAL PREFERENCES</td>
+            </tr>
+
+          </table>
+
+          <table width="515px" style="border-collapse:collapse;" bgcolor="white" border="1">
+            <?php echo $row2['pref'];?>
+
+
+            <tr>
+              <td colspan="6" style="padding-top:10px;text-indent:20px;">I hereby certify that i have carefully read and understand the contents of this application form and that I
+                agree to abide and be bound by the terms and conditions for my employment with Patton Security and Investigation
+                Agency. Inc. I authorized the company to investigate the veracity of all information contained in this application.
+                Any wittful falsification entered herein shall be considered a just cause for the forfeiture of this application/
+                termination of my employment.</td>
+            </tr>
+
+            <tr>
+              <td colspan="6" style="text-align:center;padding-top:30px;">
+                <a href="printthirdform.php?id=<?php echo $row2['id'];?>">
+                  <button>Print</button>
+                </a>
+                <?php 
+										if($action=="view"){
+											echo '<a href="updateApp.php?id='.$row2['id'].'&action=update"><button>Approve</button></a>';
+										}
+									?>
+
+                <a href="updateApp.php?id=<?php echo $row2['id'];?>&action=delete">
+                  <button>Delete</button>
+                </a>
+                <?php 
+										if($action=="view" || $action=="Approved"){
+										
+										echo '<a href="applicant.php?id='.$row2['id'].'&set=interview"><button>Set Interview</button></a>';
+										}
+									?>
+
+              </td>
+            </tr>
+
+          </table>
+
+          <!-------------------------------------------------------------------------------->
+          <?php
+				}else if($action=="Approved" || $action=="" && $set==""){
+				$query3 = "SELECT a.*,j.title from application a LEFT JOIN job j ON a.jobID=j.id where a.approval = 'Approved' and a.interview!='1' order by a.id";
+				$res3 = mysql_query($query3);
+				$count3 = mysql_num_rows($res3);
+			?>
+            <!-----------------------------------------right container for table approved----------->
+            <table style="width:515px;text-align:center;margin-top:10px;margin-bottom:10px;">
+              <thead>
+                <tr>
+                  <td>Name</td>
+                  <td>Job</td>
+                  <td>Contact</td>
+                  <td>Age</td>
+                  <td>Gender</td>
+                  <td>Action</td>
+                </tr>
+              </thead>
+              <tbody>
+                <?php 
+						if($count3<1){
+							echo "<tr>
+								<td colspan='6' style='background:#f9ae42;'>No Record Found!</td>
+								</tr>";
+						}else{
+						
+							while($row3=mysql_fetch_array($res3)){
+								echo "<tr>
+									<td style='background:#f9ae42;'>".$row3['fname']." ".$row3['mname']." ".$row3['lname']."</td>
+									<td style='background:#f9ae42;'>".$row3['title']."</td>
+									<td style='background:#f9ae42;'>".$row3['presContact']."</td>
+									<td style='background:#f9ae42;'>".$row3['age']."</td>
+									<td style='background:#f9ae42;'>".$row3['gender']."</td>
+									<td style='background:#f9ae42;'><a href='updatenewapp.php?id=".$row3['id']."&action=Approved&job=".$row3['title']."&page=1'><img src='../images/search_16.png' height='10px' width='10px' style='font-weight:bold;'/>View</a>&nbsp;&nbsp;
+									<a href='applicant.php?id=".$row3['id']."&set=profile'><img src='../images/search_16.png' height='10px' width='10px' style='font-weight:bold;'/>Profile</a>
+									</td>
+									</tr>";
+							}
+						
+						}
+					?>
+
+              </tbody>
+            </table>
+            <!-----------------------------------------end right container for table approved----------->
+
+            <?php
+				}else if($action=="Hired" && $set==""){
+				
+				$query4 = "SELECT a.*,j.title from application a LEFT JOIN job j ON a.jobID=j.id where a.approval = 'Hired' order by a.id";
+				$res4 = mysql_query($query4);
+				$count4 = mysql_num_rows($res4);
+			?>
+              <!-----------------------------------------right container for table Hired----------->
+              <table style="width:515px;text-align:center;margin-top:10px;margin-bottom:10px;">
+                <thead>
+                  <tr>
+                    <td>Name</td>
+                    <td>Job</td>
+                    <td>Contact</td>
+                    <td>Age</td>
+                    <td>Gender</td>
+                    <td>Action</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php 
+						if($count4<1){
+							echo "<tr>
+								<td colspan='6' style='background:#f9ae42;'>No Record Found!</td>
+								</tr>";
+						}else{
+						
+							while($row4=mysql_fetch_array($res4)){
+								echo "<tr>
+									<td style='background:#f9ae42;'>".$row4['fname']." ".$row4['mname']." ".$row4['lname']."</td>
+									<td style='background:#f9ae42;'>".$row4['title']."</td>
+									<td style='background:#f9ae42;'>".$row4['presContact']."</td>
+									<td style='background:#f9ae42;'>".$row4['age']."</td>
+									<td style='background:#f9ae42;'>".$row4['gender']."</td>
+									<td style='background:#f9ae42;'><a href='applicant.php?id=".$row4['id']."&action=Hired&job=".$row4['title']."&page=1'><img src='../images/search_16.png' height='10px' width='10px' style='font-weight:bold;'/>view</a>&nbsp;&nbsp;
+									<a href='applicant.php?action=Hired&id=".$row4['id']."&set=profile'><img src='../images/search_16.png' height='10px' width='10px' style='font-weight:bold;'/>Profile</a></td>
+									</tr>";
+							}
+						
+						}
+						
+					?>
+                  <tr>
+                    <td colspan="6">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td colspan="6" style="text-align:center;">
+                      <a href="printHired.php">
+                        <button class="ui-state-default ui-corner-all" style="font-size:11px;margin-top:6px;cursor:pointer;">
+                          <span class="ui-icon ui-icon-print"></span>
+                          <span class="span5">Print</span>
+                        </button>
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-----------------------------------------end right container for table hired----------->
+              <?php
+			}else if($set=="interview"){
+			?>
+                <!-----------------------------------------right container for table setting interview----------->
+                <div style="margin:15px auto;width:auto;min-height:100px;padding:10px;">
+                  <form action="interAction.php" method="post" enctype="multipart/form-data" name="interviewForm">
+                    <script>
+                      $(document).ready(function () {
+                        $(document).on('change', 'select[name="year"]', function () {
+                          var d = $("select[name='day']").val();
+                          var m = $("select[name='month']").val();
+                          var y = $("select[name='year']").val();
+                          if (d == "0") {
+                            alert("Please select a day!");
+                          }
+                          if (m == "0") {
+                            alert("Please select a month!");
+                          }
+                          if (y == "") {
+                            alert("Please select a year!");
+                          }
+                          var seldate = mktime(0, 0, 0, m, d, y);
+                          //1393257600 february 25, 2014
+                          //1393257600 date now
+
+                          var dNow = new Date().getDate();
+                          var mNow = new Date().getMonth();
+                          mNow = mNow + 1;
+                          var yNow = new Date().getFullYear();
+                          var dn = mktime(0, 0, 0, mNow, dNow, yNow);
+                          if (seldate < dn || dn == seldate) {
+                            alert("Invalid date!");
+                            $("#day").prop("selected", true);
+                            $("#month").prop("selected", true);
+                            $("#year").prop("selected", true);
+                          }
+                        });
+                      });
+                    </script>
+                    <input type="hidden" name="action" value="insert" />
+                    <input type="hidden" name="id" value="<?php echo $row2['applicantID'];?>" />
+                    <input type="hidden" name="jobid" value="<?php echo $id;?>" />
+                    <table style="margin:auto;">
+                      <tr>
+                        <td colspan="3">
+                          Title:
+                          <input type="text" name="title" style="width:270px;" />
+                        </td>
+
+                      </tr>
+                      <tr>
+                        <td colspan="3">
+                          Message
+                        </td>
+
+                      </tr>
+                      <tr>
+                        <td colspan="3" style="text-align:center;">
+                          <textarea style="resize:none;width:300px;height:150px;" placeholder="Your text here..." name="content"></textarea>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Interview Date
+                        </td>
+                        <td>:</td>
+                        <td>
+                          <select name="month">
+                            <option value="0" id="month">Month</option>
+                            <option value="01">January</option>
+                            <option value="02">February</option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                          </select>
+                          <select name="day">
+                            <option value="0" id="day">Day</option>
+                            <?php
+								for($i=1;$i<=31;$i++){
+									echo '<option value="'.$i.'">'.$i.'</option>';
+								}
+							?>
+                          </select>
+                          <select name="year">
+                            <option value="0" id="year">Year</option>
+                            <?php
+								for($a=2014;$a<=2020;$a++){
+								
+									echo '<option value="'.$a.'">'.$a.'</option>';
+								}
+							?>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Interview Time</td>
+                        <td>:</td>
+                        <td>
+                          <input type="text" name="time" style="width:210px;" />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="3">&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td colspan="3" style="text-align:center;">
+                          <input type="submit" value="Save" />&nbsp;
+                          <input type="reset" value="Clear" />
+                        </td>
+                      </tr>
+                    </table>
+                  </form>
+                </div>
+                <!-----------------------------------------end right container for table setting interview----------->
+                <?php
+				}else if($set=="scheduled"){
+				$querySched="SELECT a.*,j.title from application a LEFT JOIN job j ON a.jobID=j.id where a.interview = '1' and hired='0' and trainingstat='0' and score='' order by a.id";
+				$resSched = mysql_query($querySched);
+				$countSched = mysql_num_rows($resSched);
+				
+			?>
+                  <!-----------------------------------------right container for table scheduled interview----------->
+                  <table style="width:515px;text-align:center;margin-top:10px;margin-bottom:10px;">
+                    <thead>
+                      <tr>
+                        <td>Name</td>
+                        <td>Job</td>
+                        <td>Contact</td>
+                        <td>Age</td>
+                        <td>Gender</td>
+                        <td>Action</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php 
+						if($countSched<1){
+							echo "<tr>
+								<td colspan='6' style='background:#f9ae42;'>No Record Found!</td>
+								</tr>";
+						}else{
+						
+							while($rowSched=mysql_fetch_array($resSched)){
+								echo "<tr>
+									<td style='background:#f9ae42;'>".$rowSched['fname']." ".$rowSched['mname']." ".$rowSched['lname']."</td>
+									<td style='background:#f9ae42;'>".$rowSched['title']."</td>
+									<td style='background:#f9ae42;'>".$rowSched['presContact']."</td>
+									<td style='background:#f9ae42;'>".$rowSched['age']."</td>
+									<td style='background:#f9ae42;'>".$rowSched['gender']."</td>
+									<td style='background:#f9ae42;'><a href='applicant.php?id=".$rowSched['id']."&action=scheduled&job=".$rowSched['title']."&page=1'><img src='../images/search_16.png' height='10px' width='10px' style='font-weight:bold;'/>View</a>&nbsp;&nbsp;
+									<a href='applicant.php?id=".$rowSched['id']."&set=profile'><img src='../images/search_16.png' height='10px' width='10px' style='font-weight:bold;'/>Profile</a>
+									</td>
+									</tr>";
+							}
+						
+						}
+					?>
+
+                    </tbody>
+                  </table>
+                  <!-----------------------------------------end right container for scheduled interview----------->
+                  <?php
+			}else if($set=="profile"){
+				$query6="SELECT a.*,j.title from application a LEFT JOIN job j ON a.jobID=j.id where a.id = '$id'";
+				$res6 = mysql_query($query6);
+				$row6 = mysql_fetch_array($res6);
+			?>
+                    <!-----------------------------------------right container for table profile----------->
+                    <div style="border:1px solid;margin:10px;">
+                      <div style="border:1px solid;margin:auto;width:100px;height:100px;">
+                        <img src="<?php echo $row6['picAdminLoc'];?>" height="100%" width="100%" />
+                      </div>
+                      <table style="margin:auto;">
+                        <tr>
+                          <td>Name</td>
+                          <td>:</td>
+                          <td>
+                            <?php echo $row6['fname']." ".$row6['mname']." ".$row6['lname'];?>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Applying for</td>
+                          <td>:</td>
+                          <td>
+                            <?php echo $row6['title'];?>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Age</td>
+                          <td>:</td>
+                          <td>
+                            <?php echo $row6['age'];?>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Gender</td>
+                          <td>:</td>
+                          <td>
+                            <?php echo $row6['gender'];?>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Address</td>
+                          <td>:</td>
+                          <td>
+                            <?php echo $row6['presentAdd'];?>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Contact No.</td>
+                          <td>:</td>
+                          <td>
+                            <?php echo $row6['presContact'];?>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Interview Date</td>
+                          <td>:</td>
+                          <td>
+                            <?php echo $row6['interviewdate'];?>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Interview Time</td>
+                          <td>:</td>
+                          <td>
+                            <?php echo $row6['interviewtime'];?>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Result</td>
+                          <td>:</td>
+                          <td>
+                            <?php echo $row6['score'];?>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Training Date</td>
+                          <td>:</td>
+                          <td>
+                            <?php echo $row6['trainingdate'];?>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Date Hired</td>
+                          <td>:</td>
+                          <td>
+                            <?php echo $row6['datehired'];?>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td colspan="3" style="text-align:center">
+                            <?php 
+							if($action!="Hired"){
+							echo '<a href="applicant.php?set=contact&id='.$row6['applicantID'].'&apid='.$row6['id'].'&jobid='.$row6['jobID'].'"><button>Contact</button></a>';
+							}
+						?>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    <!-----------------------------------------end right container for table profile----------->
+                    <?php
+			}else if($set=="contact"){
+			?>
+                      <!-----------------------------------------right container for table contact----------->
+                      <div style="margin:15px auto;width:auto;min-height:100px;padding:10px;">
+                        <form action="contactAction.php" method="post" enctype="multipart/form-data" name="contactForm">
+                          <input type="hidden" name="id" value="<?php echo $id;?>" />
+                          <script>
+                            $(document).ready(function () {
+                              $(document).on('change', 'select[name="year"]', function () {
+                                var d = $("select[name='day']").val();
+                                var m = $("select[name='month']").val();
+                                var y = $("select[name='year']").val();
+                                if (d == "0") {
+                                  alert("Please select a day!");
+                                }
+                                if (m == "0") {
+                                  alert("Please select a month!");
+                                }
+                                if (y == "") {
+                                  alert("Please select a year!");
+                                }
+                                var seldate = mktime(0, 0, 0, m, d, y);
+                                //1393257600 february 25, 2014
+                                //1393257600 date now
+
+                                var dNow = new Date().getDate();
+                                var mNow = new Date().getMonth();
+                                mNow = mNow + 1;
+                                var yNow = new Date().getFullYear();
+                                var dn = mktime(0, 0, 0, mNow, dNow, yNow);
+                                if (seldate < dn || dn == seldate) {
+                                  alert("Invalid date!");
+                                  $("#day").prop("selected", true);
+                                  $("#month").prop("selected", true);
+                                  $("#year").prop("selected", true);
+                                }
+                              });
+                            });
+                          </script>
+                          <table style="margin:auto;">
+                            <tr>
+                              <td>Message for</td>
+                              <td>:</td>
+                              <td>
+                                <input type="radio" name="type" value="hired" />Hiring
+                                <input type="radio" name="type" value="train" />Training
+                                <input type="radio" name="type" value="others" />Others</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <input type="hidden" name="action" value="" />
+                                <input type="hidden" name="jobid" value="<?php echo $jobid;?>" />
+                                <input type="hidden" name="apid" value="<?php echo $_GET['apid'];?>" /> Title
+                              </td>
+                              <td>:</td>
+                              <td>
+                                <input type="text" name="title" style="width:210px;" />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td colspan="3">
+                                Message
+                              </td>
+
+                            </tr>
+                            <tr>
+                              <td colspan="3" style="text-align:center;">
+                                <textarea style="resize:none;width:300px;height:150px;" placeholder="Your text here..." name="content"></textarea>
+                              </td>
+                            </tr>
+                            <tr id="dateholder" style="display:none;">
+                              <td>
+                                <span id="typ"></span>
+                              </td>
+                              <td>:</td>
+                              <td>
+                                <select name="month">
+                                  <option value="0" id="month">Month</option>
+                                  <option value="01">January</option>
+                                  <option value="02">February</option>
+                                  <option value="03">March</option>
+                                  <option value="04">April</option>
+                                  <option value="05">May</option>
+                                  <option value="06">June</option>
+                                  <option value="07">July</option>
+                                  <option value="08">August</option>
+                                  <option value="09">September</option>
+                                  <option value="10">October</option>
+                                  <option value="11">November</option>
+                                  <option value="12">December</option>
+                                </select>
+                                <select name="day">
+                                  <option value="0" id="day">Day</option>
+                                  <?php
+								for($i=1;$i<=31;$i++){
+									echo '<option value="'.$i.'">'.$i.'</option>';
+								}
+							?>
+                                </select>
+                                <select name="year">
+                                  <option value="0" id="year">Year</option>
+                                  <?php
+								for($a=2014;$a<=2020;$a++){
+								
+									echo '<option value="'.$a.'">'.$a.'</option>';
+								}
+							?>
+                                </select>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Score</td>
+                              <td>:</td>
+                              <td>
+                                <input type="radio" name="score" value="Pass" />Pass
+                                <input type="radio" name="score" value="Failed" />Failed</td>
+                            </tr>
+                            <tr>
+                              <td colspan="3">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td colspan="3" style="text-align:center;">
+                                <input type="submit" value="Save" />&nbsp;
+                                <input type="reset" value="Clear" />
+                              </td>
+                            </tr>
+                          </table>
+                        </form>
+                      </div>
+                      <!-----------------------------------------end right container for table contact----------->
+                      <?php
+				}else if($action=="Trainee" && $set==""){
+				
+				$query7 = "SELECT a.*,j.title from application a LEFT JOIN job j ON a.jobID=j.id where a.approval = 'Trainee' order by a.id";
+				$res7 = mysql_query($query7);
+				$count7 = mysql_num_rows($res7);
+			?>
+                        <!-----------------------------------------right container for table Trainee----------->
+                        <table style="width:515px;text-align:center;margin-top:10px;margin-bottom:10px;">
+                          <thead>
+                            <tr>
+                              <td>Name</td>
+                              <td>Job</td>
+                              <td>Contact</td>
+                              <td>Age</td>
+                              <td>Gender</td>
+                              <td>Action</td>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <?php 
+						if($count7<1){
+							echo "<tr>
+								<td colspan='6' style='background:#f9ae42;'>No Record Found!</td>
+								</tr>";
+						}else{
+						
+							while($row7=mysql_fetch_array($res7)){
+								echo "<tr>
+									<td style='background:#f9ae42;'>".$row7['fname']." ".$row7['mname']." ".$row7['lname']."</td>
+									<td style='background:#f9ae42;'>".$row7['title']."</td>
+									<td style='background:#f9ae42;'>".$row7['presContact']."</td>
+									<td style='background:#f9ae42;'>".$row7['age']."</td>
+									<td style='background:#f9ae42;'>".$row7['gender']."</td>
+									<td style='background:#f9ae42;'><a href='applicant.php?id=".$row7['id']."&action=Trainee&job=".$row7['title']."&page=1'><img src='../images/search_16.png' height='10px' width='10px' style='font-weight:bold;'/>view</a>
+									
+									<a href='applicant.php?id=".$row7['id']."&set=profile'><img src='../images/search_16.png' height='10px' width='10px' style='font-weight:bold;'/>Profile</a></td>
+									</tr>";
+							}
+						
+						}
+						
+					?>
+
+                          </tbody>
+                        </table>
+                        <!-----------------------------------------end right container for table Trainee----------->
+                        <?php
+				}
+			?>
+      </div>
+      <div style="clear:both"></div>
+
+    </div>
+  </div>
+
+
+</body>
+
+</html>

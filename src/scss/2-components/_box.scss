@@ -1,0 +1,12 @@
+.c-box {
+  min-height: 100px;
+  height: auto;
+  background-color: #fff;
+  position: relative;
+  &:hover {
+    box-shadow: 0 2px 5px rgba(163, 163, 163, 0.75);
+  }
+  i {
+    font-size: 2rem;
+  }
+}

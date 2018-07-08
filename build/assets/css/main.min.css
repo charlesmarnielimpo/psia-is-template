@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900");
+.sw-btn-prev::before {
+  content: "\f053         ";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900; }
+
+.sw-btn-next::after {
+  content: "  \f054";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900; }
+
+table.dataTable thead th,
+table.dataTable thead td {
+  border-bottom: 1px solid #dee2e6; }
+
+table.dataTable.no-footer {
+  border-bottom: 1px solid #dee2e6; }
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  vertical-align: middle !important; }
+
+.pagination li.paginate_button {
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important; }
+
+html {
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: "Source Sans Pro", sans-serif; }
+
+hr.line {
+  border: none;
+  margin-bottom: 30px; }
+  hr.line::after {
+    content: "";
+    border: 2px solid var(--primary);
+    width: 70px;
+    height: 2px;
+    margin: 0 auto;
+    display: block; }
+
+.e-or {
+  position: relative; }
+  .e-or::before, .e-or::after {
+    content: " ";
+    display: block;
+    width: 25px;
+    height: 2px;
+    border: 2px solid var(--primary); }
+  .e-or::before {
+    position: absolute;
+    top: 12px;
+    left: calc(50% - 40px); }
+  .e-or::after {
+    position: absolute;
+    top: 12px;
+    right: calc(50% - 40px); }
+
+.c-box {
+  min-height: 100px;
+  height: auto;
+  background-color: #fff;
+  position: relative; }
+  .c-box:hover {
+    box-shadow: 0 2px 5px rgba(163, 163, 163, 0.75); }
+  .c-box i {
+    font-size: 2rem; }
+
+.dropdown-toggle,
+.dropdown-toggle:hover,
+.btn-secondary:not(:disabled):not(.disabled).active,
+.btn-secondary:not(:disabled):not(.disabled):active,
+.show > .btn-secondary.dropdown-toggle {
+  background-color: transparent;
+  border: none; }
+
+.btn-secondary.focus,
+.btn-secondary:focus,
+.btn-secondary:not(:disabled):not(.disabled).active:focus,
+.btn-secondary:not(:disabled):not(.disabled):active:focus,
+.show > .btn-secondary.dropdown-toggle:focus {
+  box-shadow: none; }
+
+.dropdown-menu {
+  top: 40px; }
+
+.p-header .navbar-brand > img {
+  width: 70px;
+  height: 65px; }

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+
+  <title>Patton Security & Investigation Agency | Approved Applicants</title>
+
+  <link rel="stylesheet" href="assets/vendors/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendors/fontawesome/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="assets/vendors/datatable/dataTables.min.css">
+  <link rel="stylesheet" href="assets/vendors/datatable/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="assets/css/main.min.css">
+
+  <style>
+    .c-breadcrumbs__wrapper {
+      background-color: #e9ecef;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="p-header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="assets/img/patton-logo.png" alt="Patton Security Investigation and Agency" width="100%">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="job-vacancy.html">Job Vacancy
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item dropdown active">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Applicants
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="applicants.html">Applicant Lists</a>
+                <a class="dropdown-item" href="hired-applicants.html">Hired</a>
+                <a class="dropdown-item" href="approve-applicants.html">Approved</a>
+              </div>
+            </li>
+          </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item d-flex align-items-center">
+              <img src="http://via.placeholder.com/50x50" alt="" class="rounded-circle">
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  John D.
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="profile.html">
+                    <i class="fas fa-user-circle"></i>&nbsp; Profile</a>
+                  <a class="dropdown-item" href="index.html">
+                    <i class="fas fa-sign-out-alt"></i>&nbsp; Logout</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="c-breadcrumbs__wrapper">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="d-flex align-items-center">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item ">
+            <a href="javascript:void(0);">Applicants</a>
+          </li>
+          <li class="breadcrumb-item ">
+            <a href="applicants.html">Applicant Lists</a>
+          </li>
+          <li class="breadcrumb-item ">
+            <a href="hired-applicants.html">Hired</a>
+          </li>
+          <li class="breadcrumb-item active " aria-current="page ">Approved</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <main class="container py-5 ">
+    <h2 class="text-center ">Approved Applicants</h2>
+    <hr class="line">
+    <table id="tbl-hired-applicant" class="table table-hover ">
+      <thead>
+        <th>#</th>
+        <th>Name</th>
+        <th>Job</th>
+        <th>Contact</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Action</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>John Doe</td>
+          <td>Security Guard</td>
+          <td>+63900-000-0000</td>
+          <td>23</td>
+          <td>Male</td>
+          <td>
+            <button class="btn btn-info" title="View">
+              <i class="fas fa-eye"></i>
+            </button>
+            <button class="btn btn-info" title="Profile" data-toggle="modal" data-target="#applicant-profile" data-backdrop="static">
+              <i class="fas fa-user-circle"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Applicant Profile Modal -->
+    <div class="modal fade" id="applicant-profile" tabindex="-1" role="dialog" aria-labelledby="applicantProfileLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="applicantProfileLabel">Applicant Profile</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div id="image" class="text-center mb-3">
+              <img src="assets/img/patton-logo.png" alt="John Doe" title="John Doe" class="img-thumbnail" width="120px" height="120px">
+            </div>
+            <dl class="row">
+              <dt class="col-sm-4">Name:</dt>
+              <dd class="col-sm-8">John Doe</dd>
+              <dt class="col-sm-4">Applying for:</dt>
+              <dd class="col-sm-8">Security Guard</dd>
+              <dt class="col-sm-4">Age:</dt>
+              <dd class="col-sm-8">23</dd>
+              <dt class="col-sm-4">Gender:</dt>
+              <dd class="col-sm-8">Male</dd>
+              <dt class="col-sm-4">Address:</dt>
+              <dd class="col-sm-8">#23 P-3 example address, Legazpi City</dd>
+              <dt class="col-sm-4">Contact Number:</dt>
+              <dd class="col-sm-8">+639xx-xxx-xxxx</dd>
+              <dt class="col-sm-4">Interview Date:</dt>
+              <dd class="col-sm-8">July 10, 2018</dd>
+              <dt class="col-sm-4">Inteview Time:</dt>
+              <dd class="col-sm-8">09:00 AM</dd>
+              <dt class="col-sm-4">Result:</dt>
+              <dd class="col-sm-8">Hired</dd>
+              <dt class="col-sm-4">Training Date:</dt>
+              <dd class="col-sm-8">August 17, 2018 09:00 AM</dd>
+              <dt class="col-sm-4">Date Hired:</dt>
+              <dd class="col-sm-8">July 10, 2018</dd>
+            </dl>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-warning">Contact</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="py-4 text-center border-top d-flex">
+    <div class="container ">
+      <span class="text-muted ">Copyright 2014. All rights reserved.</span>
+    </div>
+  </footer>
+  <script src="assets/vendors/jquery/jquery.min.js "></script>
+  <script src="assets/vendors/popper/popper.min.js "></script>
+  <script src="assets/vendors/bootstrap/bootstrap.min.js "></script>
+  <script src="assets/vendors/datatable/dataTables.min.js "></script>
+  <script src="assets/vendors/datatable/dataTables.bootstrap4.min.js "></script>
+  <script>
+    $(document).ready(function () {
+      $('#tbl-hired-applicant').dataTable();
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+html {
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: $font-stack-base;
+}
+
+hr.line {
+  border: none;
+  margin-bottom: 30px;
+  &::after {
+    content: "";
+    border: 2px solid var(--primary);
+    width: 70px;
+    height: 2px;
+    margin: 0 auto;
+    display: block;
+  }
+}
