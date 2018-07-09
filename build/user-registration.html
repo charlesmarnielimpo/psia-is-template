@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <link rel="stylesheet" href="../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../css/ui-lightness/jquery-ui-1.9.2.custom.css" />
+
+  <script type="text/javascript" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" src="../js/patton.js"></script>
+
+  <script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+
+  <script type="text/javascript" src="../js/jquery-ui-1.9.2.custom.js"></script>
+
+</head>
+
+<body style="background:none;font:75%" Trebuchet MS ", sans-serif;">
+
+  <div style="border-radius:10px;border:1px solid #999999;min-height:200px;padding:10px;width:608px;margin:100px auto;background: linear-gradient(#49a8de, white);background: -moz-linear-gradient(#49a8de, white); ">
+    <div style="width:120px;height:120px;margin:5px auto;">
+      <img src="../images/patton.png" height="100%" width="100%" />
+
+    </div>
+    <div style="border-radius:10px;border:1px solid #999999;width:auto;min-height:100px;margin-top:10px;padding:5px; ">
+      <form action="saveAdmin.php" method="post" enctype="multipart/form-data" name="hrForm">
+        <table>
+          <tr>
+            <td>Image</td>
+            <td>:</td>
+            <td>
+              <input type="file" name="pic" />
+            </td>
+          </tr>
+          <tr>
+            <td>Name</td>
+            <td>:</td>
+            <td>
+              <input type="text" name="fname" placeholder="First Name" />
+              <input type="text" name="mname" placeholder="Middle Name" />
+              <input type="text" name="lname" placeholder="Last Name" />
+            </td>
+          </tr>
+          <tr>
+            <td>Position</td>
+            <td>:</td>
+            <td>
+              <select name="position" style="width:155px;">
+                <option value="0">Choose here...</option>
+                <option value="hr">HR</option>
+                <option value="genman">General Manager</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Age</td>
+            <td>:</td>
+            <td>
+              <input type="text" name="age" />
+            </td>
+          </tr>
+          <tr>
+            <td>Gender</td>
+            <td>:</td>
+            <td>
+              <select name="gender" style="width:155px;">
+                <option value="0"></option>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Address</td>
+            <td>:</td>
+            <td>
+              <input type="text" name="add" />
+            </td>
+          </tr>
+          <tr>
+            <td>Contact</td>
+            <td>:</td>
+            <td>
+              <input type="text" name="contact" />
+            </td>
+          </tr>
+          <tr>
+            <td>Email Address</td>
+            <td>:</td>
+            <td>
+              <input type="text" name="eadd" />
+            </td>
+          </tr>
+          <tr>
+            <td>Username</td>
+            <td>:</td>
+            <td>
+              <input type="text" name="uname" />
+            </td>
+          </tr>
+          <tr>
+            <td>Password</td>
+            <td>:</td>
+            <td>
+              <input type="password" name="pass" />
+            </td>
+          </tr>
+          <tr>
+            <td>Re-type Password</td>
+            <td>:</td>
+            <td>
+              <input type="password" name="pass2" />
+              <span id="err" style="font-style:italic;color:red;font-size:10px;display:none;">Password Mismatched</span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3">&nbsp;</td>
+          </tr>
+          <tr>
+            <td colspan="3" style="text-align:center;">
+              <input type="submit" value="Save" class="btn" />
+              <input type="reset" value="Clear" class="btn" />
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

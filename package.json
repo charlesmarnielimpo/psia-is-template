@@ -24,6 +24,7 @@
     "@chenfengyuan/datepicker": "^1.0.0-beta",
     "@fortawesome/fontawesome-free": "^5.1.0",
     "bootstrap": "^4.1.1",
-    "pump": "^3.0.0"
+    "pump": "^3.0.0",
+    "tempusdominus-bootstrap-4": "^5.0.1"
   }
 }
