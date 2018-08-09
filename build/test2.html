@@ -1,0 +1,1141 @@
+<div style="border:1px solid;min-height:300px;padding:10px;background:white;">
+
+  <form action="validateFirstInfo.php" method="post" name="firstInfo">
+    <!-- Name to contact -->
+
+    <table style="width:515px;" bgcolor="white">
+      <tr>
+        <td colspan="6" style="padding-bottom:10px;">
+          <div style="float:left;"></div>
+          <div style="border:1px solid;background-image:url(<?php echo $row['picLocation'];?>);background-size:100% 100%;height:100px;width:100px;float:left;"></div>
+          <div style="clear:both"></div>
+          <input type="hidden" name="picLoc" value="<?php echo $row['picLocation'];?>" />
+          <input type="hidden" name="job_id" value="<?php echo $job_id;?>" />
+          <input type="hidden" name="app_id" value="<?php echo $row['id'];?>" />
+        </td>
+        <tr>
+
+          <tr>
+            <td style="border-right:1px solid;border-top:1px solid;">Surname
+              <br/>
+              <input type="text" readonly="readonly" name="lname" class="inputtext" style="height:18px;width:127px;" value="<?php echo $row['lname'];?>"
+              />
+            </td>
+            <td style="border-right:1px solid;border-top:1px solid;">Given Name
+              <br/>
+              <input type="text" readonly="readonly" name="fname" class="inputtext" style="height:18px;width:127px;" value="<?php echo $row['fname'];?>"
+              />
+            </td>
+            <td style="border-top:1px solid;">Middle Name
+              <br/>
+              <input type="text" class="inputtext" readonly="readonly" name="mname" style="height:18px;width:127px;" value="<?php echo $row['mname'];?>"
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding-top:10px;border-right:1px solid;border-top:1px solid;" colspan="2">Present Address
+              <br/>
+              <input type="text" name="presentAdd" class="inputtext" style="height:18px;width:265px;" readonly="readonly" value="<?php echo $row['pAdd'];?>"
+              />
+            </td>
+            <td style="padding-top:10px;border-top:1px solid;">Mobile Number
+              <br/>
+              <input type="text" name="prescontact" class="inputtext" style="height:18px;width:127px;" readonly="readonly" value="<?php echo $row['contact'];?>"
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding-top:10px;border-right:1px solid;border-top:1px solid;" colspan="2">Provincial Address
+              <br/>
+              <input type="text" name="provAdd" class="inputtext" style="height:18px;width:265px;" />
+            </td>
+            <td style="padding-top:10px;;border-top:1px solid;">Phone Number
+              <br/>
+              <input type="text" name="provcontact2" class="inputtext" style="height:18px;width:127px;" />
+            </td>
+          </tr>
+    </table>
+
+    <!--Date of birth to religion-->
+    <table style="width:515px;border-top:1px solid;" bgcolor="white">
+
+      <tr>
+        <td style="padding-top:10px;border-right:1px solid">Date of Birth
+          <br/>
+          <input type="text" name="appDOB" class="inputtext" style="height:18px;width:75px;" placeholder="mm/dd/yyyy" readonly="readonly"
+            value="<?php echo $row['bday'];?>" />
+        </td>
+        <td style="padding-top:10px;border-right:1px solid">Place of Birth
+          <br/>
+          <input type="text" name="appDOP" class="inputtext" style="height:18px;width:127px;" readonly="readonly" value="<?php echo $row['bplace'];?>"
+          />
+        </td>
+        <td style="padding-top:10px;border-right:1px solid">Age
+          <br/>
+          <input type="text" name="appAge" class="inputtext" style="height:18px;width:20px;" readonly="readonly" value="<?php echo $row['age'];?>"
+          />
+        </td>
+        <td style="padding-top:10px;border-right:1px solid">Gender
+          <br/>
+          <input type="text" name="appGender" class="inputtext" style="height:18px;width:50px;" readonly="readonly" value="<?php echo $row['gender'];?>"
+          />
+        </td>
+        <td style="padding-top:10px;">Religion
+          <br/>
+          <input type="text" class="inputtext" name="appRel" style="height:18px;width:85px;" />
+        </td>
+      </tr>
+
+    </table>
+
+    <!--Height to  civil status-->
+    <table style="width:515px;border-top:1px solid;" bgcolor="white">
+      <tr>
+        <td style="padding-top:10px;border-right:1px solid;">Height
+          <br/>
+          <input type="text" name="height" class="inputtext" style="height:18px;width:50px;" />
+        </td>
+        <td style="padding-top:10px;border-right:1px solid;">Weight
+          <br/>
+          <input type="text" name="weight" class="inputtext" style="height:18px;width:50px;" />
+        </td>
+        <td style="padding-top:10px;width:300px;">Civil Status
+          <br/>
+          <input type="radio" name="cStatus" value="single" id="Single" />Single
+          <input type="radio" name="cStatus" value="Married" id="Married" /> Married
+          <input type="radio" name="cStatus" value="Widowed" id="Widowed" /> Widowed
+          <input type="radio" name="cStatus" value="Seperated" id="Seperated" /> Seperated</td>
+      </tr>
+    </table>
+
+
+
+
+    <!--SSS no to date expiration -->
+
+    <table style="width:515px;border-top:1px solid;" bgcolor="white">
+      <tr>
+        <td style="border-right:1px solid;padding-top:10px;">SSS Number
+          <br/>
+          <input type="text" name="sss" class="inputtext" style="height:18px;width:127px;" />
+        </td>
+        <td style="border-right:1px solid;padding-top:10px;">TIN Number
+          <br/>
+          <input type="text" name="tin" class="inputtext" style="height:18px;width:127px;" />
+        </td>
+        <td style="padding-top:10px;">PhilHealth
+          <br/>
+          <input type="text" class="inputtext" name="ph" style="height:18px;width:127px;" />
+        </td>
+      </tr>
+
+
+      <tr>
+        <td style="border-right:1px solid;border-top:1px solid;padding-top:10px;">License No./ SBR No.
+          <br/>
+          <input type="text" class="inputtext" name="sbr" style="height:18px;width:127px;" />
+        </td>
+        <td style="border-right:1px solid;border-top:1px solid;padding-top:10px;">Date Issued
+          <br/>
+          <input type="text" class="inputtext" name="dissue" style="height:18px;width:127px;" />
+        </td>
+        <td style="border-top:1px solid;padding-top:10px;">Date of Expiration
+          <br/>
+          <input type="text" name="dexp" class="inputtext" style="height:18px;width:127px;" />
+        </td>
+      </tr>
+
+    </table>
+
+
+
+    <!-- father to mother's occupation -->
+
+    <table style="width:515px;border-top:1px solid;" bgcolor="white">
+
+      <tr>
+        <td style="border-right:1px solid;padding-top:10px;">Name of Father
+          <br/>
+          <input type="text" name="father" class="inputtext" style="height:18px;width:157px;" />
+        </td>
+        <td style="border-right:1px solid;padding-top:10px;">Date of Birth
+          <br/>
+          <input type="text" name="fDOB" class="inputtext" style="height:18px;width:100px;" placeholder="mm/dd/yyyy" />
+        </td>
+        <td style="padding-top:10px;">Occupation
+          <br/>
+          <input type="text" class="inputtext" name="dOcc" style="height:18px;width:127px;" />
+        </td>
+      </tr>
+
+      <tr>
+        <td style="border-right:1px solid;border-top:1px solid;padding-top:10px;">Name of Mother
+          <br/>
+          <input type="text" name="mother" class="inputtext" style="height:18px;width:157px;" />
+        </td>
+        <td style="border-right:1px solid;border-top:1px solid;padding-top:10px;">Date of Birth
+          <br/>
+          <input type="text" class="inputtext" style="height:18px;width:100px;" name="mDOB" placeholder="mm/dd/yyyy" />
+        </td>
+        <td style="border-top:1px solid;padding-top:10px;">Occupation
+          <br/>
+          <input type="text" name="mOcc" class="inputtext" style="height:18px;width:127px;" />
+        </td>
+      </tr>
+
+
+    </table>
+
+
+
+
+    <!--brothers-->
+
+    <table style="width:515px;border-top:1px solid;" bgcolor="white">
+
+      <tr>
+        <td style="text-align:center;padding-top:10px;">Name of Brother/Sisters </td>
+        <td style="text-align:center;padding-top:10px;">Date of Birth</td>
+        <td style="text-align:center;padding-top:10px;">Occupation</td>
+      </tr>
+
+
+      <tr>
+        <td style="border-right:1px solid;border-top:1px solid;padding-top:10px;">
+          <input type="text" class="inputtext" style="height:18px;width:150px;" name="bro1" />
+        </td>
+        <td style="border-right:1px solid;border-top:1px solid;padding-top:10px;">
+          <input type="text" class="inputtext" style="height:18px;width:100px;" name="bDOB1" placeholder="mm/dd/yyyy" />
+        </td>
+        <td style="border-top:1px solid;padding-top:10px;">
+          <input type="text" class="inputtext" name="bOcc1" style="height:18px;width:127px;" />
+        </td>
+      </tr>
+
+
+      <tr>
+        <td style="border-right:1px solid;border-top:1px solid;padding-top:10px;">
+          <input type="text" name="bro2" class="inputtext" style="height:18px;width:150px;" />
+        </td>
+        <td style="border-right:1px solid;border-top:1px solid;padding-top:10px;">
+          <input type="text" name="bDOB2" class="inputtext" style="height:18px;width:100px;" placeholder="mm/dd/yyyy" />
+        </td>
+        <td style="border-top:1px solid;padding-top:10px;">
+          <input type="text" name="bOcc2" class="inputtext" style="height:18px;width:127px;" />
+        </td>
+      </tr>
+
+
+      <tr>
+        <td style="border-right:1px solid;border-top:1px solid;padding-top:10px;">
+          <input type="text" name="bro3" class="inputtext" style="height:18px;width:150px;" />
+        </td>
+        <td style="border-right:1px solid;border-top:1px solid;padding-top:10px;">
+          <input type="text" name="bDOB3" class="inputtext" style="height:18px;width:100px;" placeholder="mm/dd/yyyy" />
+        </td>
+        <td style="border-top:1px solid;padding-top:10px;">
+          <input type="text" name="bOcc3" class="inputtext" style="height:18px;width:127px;" />
+        </td>
+      </tr>
+
+
+      <tr>
+        <td style="border-right:1px solid;border-top:1px solid;padding-top:10px;">
+          <input type="text" name="bro4" class="inputtext" style="height:18px;width:150px;" />
+        </td>
+        <td style="border-right:1px solid;border-top:1px solid;padding-top:10px;">
+          <input type="text" name="bDOB4" class="inputtext" style="height:18px;width:100px;" placeholder="mm/dd/yyyy" />
+        </td>
+        <td style="border-top:1px solid;padding-top:10px;">
+          <input type="text" class="inputtext" name="bOcc4" style="height:18px;width:127px;" />
+        </td>
+      </tr>
+
+
+
+      <tr>
+        <td style="border-right:1px solid;border-top:1px solid;padding-top:10px;">
+          <input type="text" name="bro5" class="inputtext" style="height:18px;width:150px;" />
+        </td>
+        <td style="border-right:1px solid;border-top:1px solid;padding-top:10px;">
+          <input type="text" name="bDOB5" class="inputtext" style="height:18px;width:100px;" placeholder="mm/dd/yyyy" />
+        </td>
+        <td style="border-top:1px solid;padding-top:10px;">
+          <input type="text" class="inputtext" name="bOcc5" style="height:18px;width:127px;" />
+        </td>
+      </tr>
+    </table>
+    <!--Spouse-->
+
+    <table style="width:515px;border-top:1px solid;" bgcolor="white">
+      <tr>
+        <td style="border-right:1px solid;border-top:1px solid;padding-top:10px;">Married Name of Spouse
+          <br />
+          <input name="spouse" type="text" class="inputtext" style="height:18px;width:140px;" />
+        </td>
+        <td style="border-right:1px solid;border-top:1px solid;padding-top:10px;">Date of Birth
+          <br />
+          <input name="sDOB" type="text" class="inputtext" style="height:18px;width:75px;" placeholder="mm/dd/yyyy" />
+        </td>
+        <td style="border-top:1px solid;border-right:1px solid;padding-top:10px;">Occupation
+          <br />
+          <input type="text" name="sOcc" class="inputtext" style="height:18px;width:100px;" />
+        </td>
+        <td style="border-top:1px solid;padding-top:10px;">Dependents
+          <br />
+          <input type="text" name="sDep" class="inputtext" style="height:18px;width:65px;" />
+        </td>
+      </tr>
+    </table>
+    <!--Children-->
+
+    <table style="width:515px;border-top:1px solid;" bgcolor="white">
+
+      <tr>
+        <td style="text-align:center;padding-top:10px;">Name of Children </td>
+        <td style="text-align:center;padding-top:10px;">Date of Birth</td>
+        <td style="text-align:center;padding-top:10px;">Occupation</td>
+      </tr>
+
+
+      <tr>
+        <td style="border-right:1px solid;border-top:1px solid;padding-top:10px;">
+          <input type="text" name="ch1" class="inputtext" style="height:18px;width:150px;" />
+        </td>
+        <td style="border-right:1px solid;border-top:1px solid;padding-top:10px;">
+          <input type="text" name="cDOB1" class="inputtext" style="height:18px;width:100px;" placeholder="mm/dd/yyyy" />
+        </td>
+        <td style="border-top:1px solid;padding-top:10px;">
+          <input type="text" class="inputtext" name="cOcc1" style="height:18px;width:127px;" />
+        </td>
+      </tr>
+
+
+      <tr>
+        <td style="border-right:1px solid;border-top:1px solid;padding-top:10px;">
+          <input type="text" name="ch2" class="inputtext" style="height:18px;width:150px;" />
+        </td>
+        <td style="border-right:1px solid;border-top:1px solid;padding-top:10px;">
+          <input type="text" name="cDOB2" class="inputtext" style="height:18px;width:100px;" placeholder="mm/dd/yyyy" />
+        </td>
+        <td style="border-top:1px solid;padding-top:10px;">
+          <input type="text" class="inputtext" name="cOcc2" style="height:18px;width:127px;" />
+        </td>
+      </tr>
+
+
+      <tr>
+        <td style="border-right:1px solid;border-top:1px solid;padding-top:10px;">
+          <input type="text" name="ch3" class="inputtext" style="height:18px;width:150px;" />
+        </td>
+        <td style="border-right:1px solid;border-top:1px solid;padding-top:10px;">
+          <input type="text" name="cDOB3" class="inputtext" style="height:18px;width:100px;" placeholder="mm/dd/yyyy" />
+        </td>
+        <td style="border-top:1px solid;padding-top:10px;">
+          <input type="text" class="inputtext" name="cOcc3" style="height:18px;width:127px;" />
+        </td>
+      </tr>
+
+
+      <tr>
+        <td style="border-right:1px solid;border-top:1px solid;padding-top:10px;">
+          <input type="text" name="ch4" class="inputtext" style="height:18px;width:150px;" />
+        </td>
+        <td style="border-right:1px solid;border-top:1px solid;padding-top:10px;">
+          <input type="text" name="cDOB4" class="inputtext" style="height:18px;width:100px;" placeholder="mm/dd/yyyy" />
+        </td>
+        <td style="border-top:1px solid;padding-top:10px;">
+          <input type="text" class="inputtext" name="cOcc4" style="height:18px;width:127px;" />
+        </td>
+      </tr>
+
+
+
+      <tr>
+        <td style="border-right:1px solid;border-top:1px solid;padding-top:10px;">
+          <input type="text" name="ch5" class="inputtext" style="height:18px;width:150px;" />
+        </td>
+        <td style="border-right:1px solid;border-top:1px solid;padding-top:10px;">
+          <input type="text" name="cDOB5" class="inputtext" style="height:18px;width:100px;" placeholder="mm/dd/yyyy" />
+        </td>
+        <td style="border-top:1px solid;padding-top:10px;">
+          <input type="text" class="inputtext" name="cOcc5" style="height:18px;width:127px;" />
+        </td>
+      </tr>
+    </table>
+    <!--Contact person-->
+
+    <table style="width:515px;border-top:1px solid;" bgcolor="white">
+      <tr>
+        <td colspan="2">Contact Person in Case of Emergency</td>
+      </tr>
+
+      <tr>
+        <td style="border-right:1px solid;border-top:1px solid;">Name
+          <br />
+          <input type="text" name="eName" class="inputtext" style="height:18px;width:200px;" />
+        </td>
+        <td style="border-top:1px solid;">Relation
+          <br />
+          <input type="text" class="inputtext" name="eRel" style="height:18px;width:200px;" />
+        </td>
+
+      </tr>
+      <tr>
+        <td style="border-right:1px solid;border-top:1px solid;border-bottom:1px solid;">Address
+          <br />
+          <input type="text" name="eAddress" class="inputtext" style="height:18px;width:200px;" />
+        </td>
+        <td style="border-top:1px solid;border-bottom:1px solid;">Contact Number
+          <br />
+          <input type="text" class="inputtext" name="eContact" style="height:18px;width:200px;" />
+        </td>
+
+      </tr>
+      <tr>
+        <td colspan="2" style="padding-top:10px;padding-left:90px;">
+          <img id="siimage" style="border: 1px solid #000; margin-right: 15px" src="./securimage_show.php?sid=<?php echo md5(uniqid()) ?>"
+            alt="CAPTCHA Image" align="left">
+
+          <a tabindex="-1" style="border-style: none;" href="#" title="Refresh Image" onclick="document.getElementById('siimage').src = './securimage_show.php?sid=' + Math.random(); this.blur(); return false">
+            <img src="./images/refresh.png" alt="Reload Image" onclick="this.blur()" align="bottom" border="0" width="30px" height="30px">
+          </a>
+          <br />
+          <strong>Enter Code*:</strong>
+          <br />
+          <input type="text" name="ct_captcha" size="12" maxlength="16" />
+        </td>
+      </tr>
+
+    </table>
+
+    <!---->
+    <button class="ui-state-default ui-corner-all" style="width:auto;cursor:pointer;margin:10px 230px;" onclick="showNextForm()">
+      <span class="ui-icon ui-icon-circle-arrow-e" style="float:left;display:block;margin-left:-3px;"></span>
+      <span style="font-size:12px;display:block;float:left;">Next</span>
+    </button>
+    <div style="clear:both;"></div>
+  </form>
+
+  <form action="validateSecondInfo.php" method="post" name="secondInfo">
+    <table style="width:647px;border:1px solid;padding-bottom:10px;" bgcolor="white">
+      <thead style="text-align:center;">
+        <tr>
+          <td style="border-bottom:1px solid;border-right:1px solid;">Name of School</td>
+          <td style="width:210px;border-bottom:1px solid;border-right:1px solid;">Address</td>
+          <td style="width:100px;border-bottom:1px solid;border-right:1px solid;">Honor/Award</td>
+          <td style="width:100px;border-bottom:1px solid;">Year Graduated</td>
+
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td style="border-bottom:1px solid;border-right:1px solid;">ELEMENTARY
+            <br />
+            <input type="text" name="eNameSchool" class="inputtext" style="width:200px;" />
+          </td>
+          <td style="border-bottom:1px solid;border-right:1px solid;">
+            <br />
+            <input type="text" name="eAddressSchool" class="inputtext" style="width:200px;" />
+          </td>
+          <td style="border-bottom:1px solid;border-right:1px solid;">
+            <br />
+            <input type="text" name="eHonor" class="inputtext" style="width:95px;" />
+          </td>
+          <td style="border-bottom:1px solid;">
+            <br />
+            <input type="text" name="eYG" class="inputtext" style="width:95px;" />
+          </td>
+        </tr>
+
+
+        <tr>
+          <td style="border-bottom:1px solid;border-right:1px solid;">HIGH SCHOOL
+            <br />
+            <input type="text" name="hNameSchool" class="inputtext" style="width:200px;" />
+          </td>
+          <td style="border-bottom:1px solid;border-right:1px solid;">
+            <br />
+            <input type="text" name="hAddressSchool" class="inputtext" style="width:200px;" />
+          </td>
+          <td style="border-bottom:1px solid;border-right:1px solid;">
+            <br />
+            <input type="text" name="hHonor" class="inputtext" style="width:95px;" />
+          </td>
+          <td style="border-bottom:1px solid;">
+            <br />
+            <input type="text" name="hYG" class="inputtext" style="width:95px;" />
+          </td>
+        </tr>
+
+        <tr>
+          <td style="border-bottom:1px solid;border-right:1px solid;">COLLEGE
+            <br />
+            <input type="text" name="cNameSchool" class="inputtext" style="width:200px;" />
+          </td>
+          <td style="border-bottom:1px solid;border-right:1px solid;">
+            <br />
+            <input type="text" name="cAddressSchool" class="inputtext" style="width:200px;" />
+          </td>
+          <td style="border-bottom:1px solid;border-right:1px solid;">
+            <br />
+            <input type="text" name="cHonor" class="inputtext" style="width:95px;" />
+          </td>
+          <td style="border-bottom:1px solid;">
+            <br />
+            <input type="text" name="cYG" class="inputtext" style="width:95px;" />
+          </td>
+        </tr>
+
+
+        <tr>
+          <td style="border-right:1px solid;">POST GRADUATE
+            <br />
+            <input type="text" name="pgNameSchool" class="inputtext" style="width:200px;" />
+          </td>
+          <td style="border-right:1px solid;">
+            <br />
+            <input type="text" name="pgAddressSchool" class="inputtext" style="width:200px;" />
+          </td>
+          <td style="border-right:1px solid;">
+            <br />
+            <input type="text" name="pgHonor" class="inputtext" style="width:95px;" />
+          </td>
+          <td>
+            <br />
+            <input type="text" name="pgYG" class="inputtext" style="width:95px;" />
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+
+
+    <!--------------------------------------------------------------------------->
+
+    <span style="font-weight:bold;font-size:14px;display:block;margin:15px;">GOVERNMENT EXAMS TAKEN</span>
+
+    <!--------------------------------------Government exam table-------------------------------->
+
+    <table style="border:1px solid;width:647px;padding-bottom:10px;" bgcolor="white">
+
+      <thead style="text-align:center;">
+        <tr>
+          <td style="border-bottom:1px solid;border-right:1px solid;">Type/Title of Examination</td>
+          <td style="width:100px;border-bottom:1px solid;border-right:1px solid;">Date Taken</td>
+          <td style="width:200px;border-bottom:1px solid;border-right:1px solid;">Place Taken</td>
+          <td style="width:100px;border-bottom:1px solid;">Results/Grade</td>
+        </tr>
+
+      </thead>
+
+      <tbody>
+        <tr>
+          <td style="border-bottom:1px solid;border-right:1px solid;">
+            <input type="text" name="title1" style="width:220px;" class="inputtext" />
+          </td>
+          <td style="border-bottom:1px solid;border-right:1px solid;">
+            <input type="text" name="date1" class="inputtext" style="width:95px;" />
+          </td>
+          <td style="border-bottom:1px solid;border-right:1px solid;">
+            <input type="text" name="place1" class="inputtext" style="width:190px;" />
+          </td>
+          <td style="border-bottom:1px solid;">
+            <input type="text" name="result1" class="inputtext" style="width:90px;" />
+          </td>
+
+        </tr>
+
+
+        <tr>
+          <td style="border-bottom:1px solid;border-right:1px solid;">
+            <input type="text" name="title2" style="width:220px;" class="inputtext" />
+          </td>
+          <td style="border-bottom:1px solid;border-right:1px solid;">
+            <input type="text" name="date2" class="inputtext" style="width:95px;" />
+          </td>
+          <td style="border-bottom:1px solid;border-right:1px solid;">
+            <input type="text" name="place2" class="inputtext" style="width:190px;" />
+          </td>
+          <td style="border-bottom:1px solid;">
+            <input type="text" name="result2" class="inputtext" style="width:90px;" />
+          </td>
+
+        </tr>
+
+
+        <tr>
+          <td style="border-right:1px solid;">
+            <input type="text" name="title3" style="width:220px;" class="inputtext" />
+          </td>
+          <td style="border-right:1px solid;">
+            <input type="text" name="date3" class="inputtext" style="width:95px;" />
+          </td>
+          <td style="border-right:1px solid;">
+            <input type="text" name="place3" class="inputtext" style="width:190px;" />
+          </td>
+          <td>
+            <input type="text" name="result3" class="inputtext" style="width:90px;" />
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+
+    <span style="font-weight:bold;font-size:14px;display:block;margin:15px;">SCHOOL / CIVIC / BUSINESS / SOCIAL ORGANIZATIONS</span>
+
+
+    <table style="border:1px solid;width:647px;padding-bottom:10px;" bgcolor="white">
+
+      <thead style="text-align:center;">
+        <tr>
+          <td style="border-bottom:1px solid;border-right:1px solid;">Name of Organization</td>
+          <td style="border-bottom:1px solid;border-right:1px solid;width:150px;">Years of Membership
+            <br /> From-To</td>
+          <td style="border-bottom:1px solid;width:200px;">Position Held</td>
+
+        </tr>
+
+      </thead>
+
+      <tbody>
+        <tr>
+          <td style="border-bottom:1px solid;border-right:1px solid;">
+            <input type="text" name="nameOrg1" class="inputtext" style="width:270px;" />
+          </td>
+          <td style="border-bottom:1px solid;border-right:1px solid;">
+            <input type="text" name="yMem1" class="inputtext" style="width:145px;" />
+          </td>
+          <td style="border-bottom:1px solid;">
+            <input type="text" name="pos1" class="inputtext" style="width:190px;" />
+          </td>
+        </tr>
+
+        <tr>
+          <td style="border-bottom:1px solid;border-right:1px solid;">
+            <input type="text" name="nameOrg2" class="inputtext" style="width:270px;" />
+          </td>
+          <td style="border-bottom:1px solid;border-right:1px solid;">
+            <input type="text" name="yMem2" class="inputtext" style="width:145px;" />
+          </td>
+          <td style="border-bottom:1px solid;">
+            <input type="text" name="pos2" class="inputtext" style="width:190px;" />
+          </td>
+        </tr>
+
+        <tr>
+          <td style="border-right:1px solid;">
+            <input type="text" name="nameOrg3" class="inputtext" style="width:270px;" />
+          </td>
+          <td style="border-right:1px solid;">
+            <input type="text" name="yMem3" class="inputtext" style="width:145px;" />
+          </td>
+          <td>
+            <input type="text" name="pos3" class="inputtext" style="width:190px;" />
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+
+    <span style="font-weight:bold;font-size:14px;display:block;margin:15px;">EMPLOYMENT RECORD (Previous Employers)</span>
+
+    <table style="border:1px solid;width:647px;padding-bottom:10px;" bgcolor="white">
+
+
+      <tr>
+        <td style="border-right:1px solid;border-bottom:1px solid;width:330px;">
+          <strong>1. Company Name</strong>
+          <br />
+          <input type="text" name="compName1" class="inputtext" style="width:320px;" />
+        </td>
+        <td style="border-bottom:1px solid;">Period of Employment From -To(dd/mm/yyyy)
+          <br />
+          <input type="text" name="period1" class="inputtext" style="width:295px;" />
+        </td>
+      </tr>
+
+      <tr>
+
+        <td style="border-bottom:1px solid;" colspan="2">Address
+          <br />
+          <input type="text" name="empAdd1" class="inputtext" style="width:630px;" />
+        </td>
+      </tr>
+
+      <tr>
+        <td style="border-right:1px solid;border-bottom:1px solid;width:330px;">Last Position Held/ Current Position
+          <br />
+          <input type="text" name="lastpos1" class="inputtext" style="width:320px;" />
+        </td>
+        <td style="border-bottom:1px solid;">Name of Immediate Superior
+          <br />
+          <input type="text" name="nameSup1" class="inputtext" style="width:295px;" />
+        </td>
+      </tr>
+
+      <tr>
+        <td style="border-right:1px solid;border-bottom:1px solid;width:330px;">Nature of Job
+          <br />
+          <input type="text" name="natureJob1" class="inputtext" style="width:320px;" />
+        </td>
+        <td style="border-bottom:1px solid;">Starting Salary
+          <br />
+          <input type="text" name="startSal1" class="inputtext" style="width:295px;" />
+        </td>
+      </tr>
+
+      <tr>
+        <td style="border-right:1px solid;width:330px;">Salary Upon Leaving
+          <br />
+          <input type="text" name="salLeave1" class="inputtext" style="width:320px;" />
+        </td>
+        <td>Reason for Leaving
+          <br />
+          <input type="text" name="reasonLeave1" class="inputtext" style="width:295px;" />
+        </td>
+      </tr>
+    </table>
+
+    <!-employment record2-->
+
+    <table style="border:1px solid;width:647px;margin-top:10px;padding-bottom:10px;" bgcolor="white">
+
+      <tr>
+        <td style="border-right:1px solid;border-bottom:1px solid;width:330px;">
+          <strong>2. Company Name</strong>
+          <br />
+          <input type="text" name="compName2" class="inputtext" style="width:320px;" />
+        </td>
+        <td style="border-bottom:1px solid;">Period of Employment From -To(dd/mm/yyyy)
+          <br />
+          <input type="text" name="period2" class="inputtext" style="width:295px;" />
+        </td>
+      </tr>
+
+      <tr>
+
+        <td style="border-bottom:1px solid;" colspan="2">Address
+          <br />
+          <input type="text" name="empAdd2" class="inputtext" style="width:630px;" />
+        </td>
+      </tr>
+
+      <tr>
+        <td style="border-right:1px solid;border-bottom:1px solid;width:330px;">Last Position Held/ Current Position
+          <br />
+          <input type="text" name="lastpos2" class="inputtext" style="width:320px;" />
+        </td>
+        <td style="border-bottom:1px solid;">Name of Immediate Superior
+          <br />
+          <input type="text" name="nameSup2" class="inputtext" style="width:295px;" />
+        </td>
+      </tr>
+
+      <tr>
+        <td style="border-right:1px solid;border-bottom:1px solid;width:330px;">Nature of Job
+          <br />
+          <input type="text" name="natureJob2" class="inputtext" style="width:320px;" />
+        </td>
+        <td style="border-bottom:1px solid;">Starting Salary
+          <br />
+          <input type="text" name="startSal2" class="inputtext" style="width:295px;" />
+        </td>
+      </tr>
+
+      <tr>
+        <td style="border-right:1px solid;width:330px;">Salary Upon Leaving
+          <br />
+          <input type="text" name="salLeave2" class="inputtext" style="width:320px;" />
+        </td>
+        <td>Reason for Leaving
+          <br />
+          <input type="text" name="reasonLeave2" class="inputtext" style="width:295px;" />
+        </td>
+      </tr>
+
+
+    </table>
+
+
+
+    <!-employment record3-->
+
+    <table style="border:1px solid;width:647px;margin-top:10px;padding-bottom:10px;" bgcolor="white">
+
+
+      <tr>
+        <td style="border-right:1px solid;border-bottom:1px solid;width:330px;">
+          <strong>3. Company Name</strong>
+          <br />
+          <input type="text" name="compName3" class="inputtext" style="width:320px;" />
+        </td>
+        <td style="border-bottom:1px solid;">Period of Employment From -To(dd/mm/yyyy)
+          <br />
+          <input type="text" name="period3" class="inputtext" style="width:295px;" />
+        </td>
+      </tr>
+
+      <tr>
+
+        <td style="border-bottom:1px solid;" colspan="2">Address
+          <br />
+          <input type="text" name="empAdd3" class="inputtext" style="width:630px;" />
+        </td>
+      </tr>
+
+      <tr>
+        <td style="border-right:1px solid;border-bottom:1px solid;width:330px;">Last Position Held/ Current Position
+          <br />
+          <input type="text" name="lastpos3" class="inputtext" style="width:320px;" />
+        </td>
+        <td style="border-bottom:1px solid;">Name of Immediate Superior
+          <br />
+          <input type="text" name="nameSup3" class="inputtext" style="width:295px;" />
+        </td>
+      </tr>
+
+      <tr>
+        <td style="border-right:1px solid;border-bottom:1px solid;width:330px;">Nature of Job
+          <br />
+          <input type="text" name="natureJob3" class="inputtext" style="width:320px;" />
+        </td>
+        <td style="border-bottom:1px solid;">Starting Salary
+          <br />
+          <input type="text" name="startSal3" class="inputtext" style="width:295px;" />
+        </td>
+      </tr>
+
+      <tr>
+        <td style="border-right:1px solid;width:330px;">Salary Upon Leaving
+          <br />
+          <input type="text" name="salLeave3" class="inputtext" style="width:320px;" />
+        </td>
+        <td>Reason for Leaving
+          <br />
+          <input type="text" name="reasonLeave3" class="inputtext" style="width:295px;" />
+        </td>
+      </tr>
+
+    </table>
+
+    <button class="ui-state-default ui-corner-all" style="width:55px;;cursor:pointer;margin:10px 300px;" onclick="show3rdForm()">
+      <span class="ui-icon ui-icon-circle-arrow-e" style="float:left;display:block;margin-left:-3px;"></span>
+      <span style="font-size:12px;display:block;float:left;">Next</span>
+    </button>
+  </form>
+
+  <table style="width:648px;padding-bottom:15px;" bgcolor="white">
+    <tr>
+      <td colspan="8" style="border-bottom:1px solid;">What dialects or language do you speak or write?
+        <input type="text" class="inputtext" style="width:618px;margin-left:5px;"
+          name="dialects" />
+      </td>
+
+
+    </tr>
+
+    <tr>
+      <td colspan="6" style="border-bottom:1px solid;">Have you ever convicted/ charge in any court law?</td>
+      <td style="border-bottom:1px solid;">
+        <input type="radio" name="convict" value="Yes" id="cYes" />Yes
+        <input type="radio" name="convict" style="margin-left:100px;" value="No" id="cNo" />No</td>
+    </tr>
+
+
+    <tr>
+      <td colspan="8" style="border-bottom:1px solid;">If YES, Please write data/s and conviction/s
+        <input type="text" class="inputtext" style="width:618px;margin-left:5px;"
+          name="convictYes" disabled="disabled" />
+      </td>
+
+
+    </tr>
+
+
+    <tr>
+      <td colspan="6" style="border-bottom:1px solid;">Do you have any health problems?</td>
+      <td style="border-bottom:1px solid;">
+        <input type="radio" name="health" value="Yes" id="hYes" />Yes
+        <input type="radio" name="health" style="margin-left:100px;" value="No" id="hNo" />No</td>
+    </tr>
+
+
+    <tr>
+      <td colspan="8" style="border-bottom:1px solid;">If YES, Please please describe:
+        <input type="text" name="healthYes" class="inputtext" style="width:618px;margin-left:5px;"
+          disabled="disabled" />
+      </td>
+
+
+    </tr>
+
+    <tr>
+      <td colspan="6" style="border-bottom:1px solid;">Have you ever had an accident or operation?</td>
+      <td style="border-bottom:1px solid;">
+        <input type="radio" name="accident" value="Yes" id="aYes" />Yes
+        <input type="radio" name="accident" style="margin-left:100px;" value="No" id="aNo" />No</td>
+
+
+    </tr>
+
+    <tr>
+      <td colspan="8" style="border-bottom:1px solid;">If YES, Please please describe:
+        <input type="text" class="inputtext" style="width:618px;margin-left:5px;" name="accidentYes"
+          disabled="disabled" />
+      </td>
+
+
+    </tr>
+
+    <tr>
+      <td colspan="8" style="border-bottom:1px solid;">Who recommended you to this company?
+        <input type="text" class="inputtext" style="width:618px;margin-left:5px;" name="recommend"
+        />
+      </td>
+
+
+    </tr>
+
+    <tr>
+      <td colspan="6" style="border-bottom:1px solid;">Do you have friend/s or relative/s working in the Company?</td>
+      <td style="border-bottom:1px solid;">
+        <input type="radio" name="compFriends" value="Yes" id="cfYes" />Yes
+        <input type="radio" name="compFriends" style="margin-left:100px;" value="No" id="cfNo" />No</td>
+    </tr>
+
+    <tr>
+      <td colspan="8" style="border-bottom:1px solid;">If YES, Please state name and relation:
+        <input type="text" class="inputtext" style="width:618px;margin-left:5px;" name="compFriendsYes"
+          disabled="disabled" />
+      </td>
+
+
+    </tr>
+
+
+    <tr>
+      <td colspan="6" style="border-bottom:1px solid;">Are you willing to be assigned to any subsidiary office of the Corporation?</td>
+      <td style="border-bottom:1px solid;">
+        <input type="radio" name="assignedOffice" value="Yes" id="aoYes" />Yes
+        <input type="radio" name="assignedOffice" style="margin-left:100px;" value="No" id="aoNo" />No</td>
+    </tr>
+
+    <tr>
+      <td colspan="8" style="border-bottom:1px solid;">If NO, Please state your reason:
+        <input type="text" class="inputtext" style="width:618px;margin-left:5px;" name="assignedOfficeNo"
+          disabled="disabled" />
+      </td>
+    </tr>
+
+
+    <tr>
+      <td colspan="6" style="border-bottom:1px solid;">Are you willing to accept provincial assignments?</td>
+      <td style="border-bottom:1px solid;">
+        <input type="radio" name="provincialAss" value="Yes" id="paYes" />Yes
+        <input type="radio" name="provincialAss" style="margin-left:100px;" value="No" id="paNo" />No</td>
+    </tr>
+
+    <tr>
+      <td colspan="8" style="border-bottom:1px solid;">If YES, Please state your preffered province of assignment:
+        <input type="text" class="inputtext" style="width:618px;margin-left:5px;"
+          name="provincialAssYes" disabled="disabled" />
+      </td>
+    </tr>
+
+
+    <tr>
+      <td colspan="8" style="border-bottom:1px solid;">SKILLS:
+        <input type="text" class="inputtext" style="width:618px;margin-left:5px;" name="skills" />
+      </td>
+    </tr>
+
+
+
+    <tr>
+      <td colspan="8" style="padding-top:20px;">Please check appropriate box if you had an experience or training in any of the following:</td>
+    </tr>
+
+
+    <tr>
+      <td colspan="3" style="padding-top:5px;">
+        <input type="checkbox" name="accounting" value="Accounting Work" />Accounting work</td>
+      <td colspan="3" style="padding-top:5px;">
+        <input type="checkbox" name="compRepair" value="Computer Repair" />Computer Repair</td>
+      <td colspan="3" style="padding-top:5px;">
+        <input type="checkbox" name="steno" value="Stenography" />Stenography</td>
+    </tr>
+
+
+    <tr>
+      <td colspan="3" style="padding-top:5px;">
+        <input type="checkbox" name="cleric" value="Clerical Work" />Clerical work</td>
+      <td colspan="3" style="padding-top:5px;">
+        <input type="checkbox" name="ProfClients" value="Profiling Clients" />Profiling clients</td>
+      <td colspan="3" style="padding-top:5px;">
+        <input type="checkbox" name="driving" value="Driving" />Driving (w/ license)</td>
+    </tr>
+
+
+    <tr>
+      <td colspan="3" style="padding-top:5px;">
+        <input type="checkbox" name="compOps" value="Computer Operations" />Computer Operations</td>
+      <td colspan="3" style="padding-top:5px;">
+        <input type="checkbox" name="salesMarketing" value="Sales Marketing" />Sales Marketing</td>
+      <td colspan="3" style="padding-top:5px;">
+        <input type="checkbox" name="collection" value="Collection" />Collection</td>
+    </tr>
+
+    <tr>
+      <td colspan="3" style="padding-top:5px;">
+        <input type="checkbox" name="supwork" value="Supervisory Work" />Supervisory work</td>
+      <td colspan="3" style="padding-top:5px;">
+        <input type="checkbox" name="typing" value="Typing" />Typing</td>
+      <td colspan="3" style="padding-top:5px;">
+        <input type="checkbox" name="prog" value="Programming" />Programming</td>
+    </tr>
+    <tr>
+      <td colspan="3" style="padding-top:5px;">&nbsp;</td>
+      <td colspan="3" style="padding-top:5px;">&nbsp;</td>
+      <td colspan="3" style="padding-top:5px;">
+        <input type="checkbox" name="others" value="Others" />Others</td>
+    </tr>
+
+    <tr>
+      <td colspan="8" style="padding-top:20px;">In fifty words or less, please describe yourself. Indicate your likes and dislikes, strengths and areas of improvements,
+        hobbies and interest among others
+        <br />
+
+        <textarea class="inputtext" style="resize:none;width:623px;height:120px;" name="descYourself"></textarea>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="8" style="padding-top:20px;">Explain why you joined Patton Security & Investigation Agency Inc,.?
+        <br />
+
+        <textarea class="inputtext" style="resize:none;width:623px;height:120px;" name="whyJoin"></textarea>
+      </td>
+    </tr>
+
+
+    <tr>
+      <td colspan="8" style="padding-top:20px;">Briefly state our personal and career goals. How do you see yourself in five years from today?
+        <br />
+
+        <textarea class="inputtext" style="resize:none;width:623px;height:120px;" name="goals"></textarea>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="8" style="padding-top:20px;">State your three (3) most important accomplishment in life:
+        <br />
+
+        <textarea class="inputtext" style="resize:none;width:623px;height:120px;" name="accomplishment"></textarea>
+      </td>
+    </tr>
+
+
+    <tr>
+      <td colspan="8" style="padding-top:20px;">PERSONAL PREFERENCES ( List down three (3) persons not related to you, whom you have known for two years).</td>
+    </tr>
+
+  </table>
+
+  <table width="646" bgcolor="white" style="padding-bottom:15px;">
+
+    <tr>
+      <td width="32" style="padding-top:5px;">Full Name:</td>
+      <td width="174">
+        <input type="text" class="inputtext" style="margin-left:10px;" name="prefFullName1" />
+      </td>
+      <td width="62" style="padding-top:5px;">Occupation:</td>
+      <td width="155">
+        <input type="text" class="inputtext" name="prefOcc1" />
+      </td>
+      <td width="44" style="padding-top:5px;">Contact No:</td>
+      <td width="151">
+        <input type="text" class="inputtext" name="prefCont1" />
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="6">Address:
+        <input type="text" class="inputtext" name="prefAdd1" />
+      </td>
+    </tr>
+
+    <tr>
+      <td style="padding-top:5px;">Full Name:</td>
+      <td>
+        <input type="text" class="inputtext" style="margin-left:10px;" name="prefFullName2" />
+      </td>
+      <td style="padding-top:5px;">Occupation:</td>
+      <td>
+        <input type="text" class="inputtext" name="prefOcc2" />
+      </td>
+      <td style="padding-top:5px;">Contact No:</td>
+      <td>
+        <input type="text" class="inputtext" name="prefCont2" />
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="6">Address
+        <input type="text" class="inputtext" name="prefAdd2" />
+      </td>
+    </tr>
+
+
+
+    <tr>
+      <td style="padding-top:5px;">Full Name:</td>
+      <td>
+        <input type="text" class="inputtext" style="margin-left:10px;" name="prefFullName3" />
+      </td>
+      <td style="padding-top:5px;">Occupation:</td>
+      <td>
+        <input type="text" class="inputtext" name="prefOcc3" />
+      </td>
+      <td style="padding-top:5px;">Contact No:</td>
+      <td>
+        <input type="text" class="inputtext" name="prefCont3" />
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="6">Address:
+        <input type="text" class="inputtext" name="prefAdd3" />
+      </td>
+    </tr>
+
+
+    <tr>
+      <td colspan="6" style="padding-top:10px;text-indent:20px;">I hereby certify that i have carefully read and understand the contents of this application form and that I agree to
+        abide and be bound by the terms and conditions for my employment with Patton Security and Investigation Agency. Inc.
+        I authorized the company to investigate the veracity of all information contained in this application. Any wittful
+        falsification entered herein shall be considered a just cause for the forfeiture of this application/ termination
+        of my employment.</td>
+    </tr>
+
+    <tr>
+      <td colspan="6" style="text-align:center;padding-top:30px;">
+        <button class="ui-state-default ui-corner-all" style="width:70px;;cursor:pointer;" onclick="saveJobForm()">
+          <span class="ui-icon ui-icon-disk" style="float:left;display:block;margin-left:-3px;"></span>
+          <span style="font-size:12px;display:block;float:left;">Submit</span>
+        </button>
+      </td>
+    </tr>
+
+  </table>
+</div>
